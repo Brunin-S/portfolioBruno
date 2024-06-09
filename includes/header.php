@@ -15,6 +15,7 @@
     * {
         margin: 0;
         padding: 0;
+        font-family: "Plus Jakarta Sans", sans-serif; 
     }
 
     html {
@@ -61,7 +62,7 @@
     }
 
     #menu-mobile a,
-    p {
+    .close-menu {
         text-decoration: none;
         color: black;
         font-family: "Plus Jakarta Sans", sans-serif;
@@ -75,6 +76,10 @@
         right: 0;
         top: 0;
         cursor: pointer;
+    }
+
+    .itens a {
+        transition: 0.3s ease;
     }
 
     .itens a:hover {
