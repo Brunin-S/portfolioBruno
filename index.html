@@ -129,7 +129,7 @@
       }
 
       .container #blue {
-        font-size: 20px;
+        font-size: 30px;
         color: blue;
         font-weight: bold;
         margin-bottom: 10px;
@@ -156,9 +156,24 @@
       #projects .container {
         display: flex;
         justify-content: center;
-        height: 200px;
         flex-direction: column;
       }
+
+      .btn-wpp {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 20px;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      border: none;
+      border-radius: 40px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      gap: 1rem;
+    }
 
       #projects #blue {
         margin: 0px 0px 30px;
@@ -169,7 +184,7 @@
       }
 
       #contact .contact-title {
-        margin: 0px 0px 60px;
+        margin: 0px 0px 20px;
       }
 
       #contact .container {
@@ -220,7 +235,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-bottom: 20px;
       }
 
       * {
@@ -297,17 +311,10 @@
         color: blue;
     }
 
-    @media (max-width: 768px) {
-        #menu {
-            display: block;
-            width: 50px;
-        }
-
-        .itens {
-            display: none;
-        }
-
-
+    .father-box {
+      display: flex;
+      gap: 2rem;
+      flex-direction: row;
     }
 
       @media (max-width: 768px) {
@@ -320,6 +327,16 @@
           order: 2;
           display: flex;
           flex-direction: column;
+          width: 100%;
+        }
+
+        #menu {
+            display: block;
+            width: 50px;
+        }
+
+        .itens {
+            display: none;
         }
 
         .container-circle {
@@ -341,10 +358,6 @@
           font-size: 18px;
         }
 
-        .box-left .welcome {
-          margin: 20px 40px;
-        }
-
         #about-me .container br {
           display: none;
         }
@@ -362,12 +375,12 @@
           margin: 0px;
         }
 
-        #projects .container h1 {
-          font-size: 23px;
+        #projects .container {
+          height: auto;
         }
 
-        #projects .container {
-          height: 100px;
+        #projects .container h1 {
+          font-size: 23px;
         }
 
         #about-me #blue {
@@ -414,6 +427,10 @@
         height: 40px;
         margin-left: 10px;
     }
+
+    .father-box {
+      flex-direction: column;
+    }
     }
 
     #pngwpp {
@@ -424,6 +441,36 @@
         width: 50px;
     }
 
+    .project-box {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.2rem;
+      border: 1px solid rgb(245, 245, 245);
+      padding: 40px;
+      border-radius: 20px;
+      background-color: white;
+      box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    }
+
+    .project-box img {
+      width: 200px;
+      border-radius: 20px;
+    }
+
+    .project-box h3 {
+      font-size: 28px;
+    }
+
+    .project-box a {
+      font-size: 18px;
+      text-decoration: none;
+      background-color: rgb(31, 31, 255);
+      padding: 13px 50px;
+      border-radius: 20px;
+      color: white;
+    }
     </style>
   </head>
 
@@ -500,9 +547,19 @@
     </section>
     <section id="projects">
       <div class="container">
-        <p id="blue">Projetos</p>
-        <h1>Novos projetos estão por vir..</h1>
-        <p>🤠</p>
+        <p id="blue">Projetos 🤠</p>
+        <div class="father-box">
+          <div class="project-box">
+            <img src="imgs/burg.png" alt="hamburguer muito bonito">
+            <h3>Goodii Burguer - Hamburgueria</h3>
+            <a href="https://goodiiburger.com.br/" target="_blank">Ver Mais</a>
+          </div>
+          <div class="project-box">
+            <img src="imgs/espanha.jpg" alt="hamburguer muito bonito">
+            <h3>Marilia Natero - Aulas de Espanhol</h3>
+            <a href="https://marilianateroportfolio.com/" target="_blank">Ver Mais</a>
+          </div>
+        </div>
       </div>
     </section>
     <section id="contact">
@@ -511,15 +568,17 @@
           <p id="blue">Contato 👇</p>
         </div>
         <div class="message">
-          <div class="bordas"><img src="imgs/pngwpp.png" alt="logo-wpp" id="pngwpp"></i></div>
-          <div>
-            <h2>Contatos</h2>
+          
+          <div style="display: flex; align-items: center; flex-direction: column;">
             <p>santanabruno.kg@gmail.com</p>
-            <p>+55 (11)94458-4838</p>
+            
+            <a href="https://w.app/0x9vjq" class="btn-wpp"><div class="bordas">
+              <img src="imgs/pngwpp.png" alt="logo-wpp" id="pngwpp"></i></div>Entre em Contato
+            </a>
           </div>
         </div>
         <div class="location">
-          <div class="bordas"><img src="imgs/mapapng.png" alt="" id="mapapng"></div>
+          <div class="bordas" style="margin-bottom: 15px;"><img src="imgs/mapapng.png" alt="" id="mapapng"></div>
           <div>
             <h2>Localização</h2>
             <p>São Paulo, Brasil</p>
@@ -529,7 +588,7 @@
     </section>
     <footer>
         <div class="org">
-            <p>Copyright © 2024. All rights are reserved</p>
+            <p>Copyright © 2025. All rights are reserved</p>
             <div class="box-right">
                 <a href="https://github.com/Brunin-S"><img src="imgs/github.png" alt="logo-github"></a>
                 <a href="https://www.linkedin.com/in/bruno-santana-7253b72ba/"><img src="imgs/linkedins.png" alt="logo-linkedin"></a>
